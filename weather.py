@@ -311,7 +311,7 @@ palette = ['red','green','orange','blue']
 swa(weather,col,hue='RainToday',xcol='RISK_MM')        
 
 
-# In[40]:
+# In[95]:
 
 
 def swa(weather,col,hue,xcol='RISK_MM'):
@@ -415,16 +415,13 @@ X = pd.get_dummies(X)
 X = scale(X)
 
 
-# In[49]:
+# In[94]:
 
 
 y1 = weather['RainToday']
 y2 = weather['RainTomorrow']
 y1 = LabelEncoder().fit_transform(y1)
 y2 = LabelEncoder().fit_transform(y2)
-print(y1)
-print('*'*100)
-print(y2)
 
 
 # 
@@ -552,18 +549,6 @@ print('The accuracy for the GradientBoosting (for RainToday) is {0}'.format(accu
 print(classification_report(gradpred,y_test))
 
 
-# In[ ]:
-
-
-
-
-
-# In[ ]:
-
-
-
-
-
 # 
 # ### Modeling for RainToday with y2
 
@@ -688,10 +673,4 @@ print('The accuracy for the GradientBoosting (for RainToday) is {0}'.format(accu
 print('The accuracy for the Logistic Regression (for RainTomorrow) is {0}'.format(accuracy_score(ylogpred,y2_test)* 100))
 print('The accuracy for the Random Forest(for RainTomorrow) is {0}'.format(accuracy_score(y2pred,y2_test)* 100))
 print('The accuracy for the GradientBoosting (for RainTomorrow) is {0}'.format(accuracy_score(gGradpred,y2_test)* 100))
-
-
-# In[ ]:
-
-
-
 
